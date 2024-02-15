@@ -9,6 +9,7 @@ const formOpenBtn = document.querySelector("#form-open"),
 formOpenBtn.addEventListener("click", () => home.classList.add("show"));
 formCloseBtn.addEventListener("click", () => {
   home.classList.remove("show");
+  formContainer.classList.remove("active");
 });
 
 pwShowHide.forEach((icon) => {

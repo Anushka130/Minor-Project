@@ -17,7 +17,7 @@
         <i class="uil uil-times form_close"></i>
         <!-- Login From -->
         <div class="form login_form">
-            <form action="./controller/login.php" autocomplete="on" method="post">
+            <form action="./controller/login.php" method="post" autocomplete="on">
                 <h2>Login</h2>
 
                 <div class="input_box">
@@ -50,31 +50,30 @@
             <form action="./controller/register.php" method="post" autocomplete="on">
                 <h2>Register</h2>
                 <div class="input_box">
-                    <input type="name" placeholder="Enter your fullname" name="full_name" required />
+                    <input type="name" placeholder="Enter your fullname" name="full_name" />
                     <i class="fa fa-user icon" aria-hidden="true"></i>
                 </div>
 
                 <div class="input_box">
-                    <input type="email" placeholder="Enter your email" name="Email" required />
+                    <input type="email" placeholder="Enter your email" name="email" />
                     <i class="uil uil-envelope-alt email"></i>
                 </div>
                 <div class="input_box">
-                    <input type="tel" placeholder="Enter your phone number" pattern="[0-9]{10}" name="phone_no"
-                        required>
+                    <input type="tel" placeholder="Enter your phone number" pattern="[0-9]{10}" name="phone_no">
                     <i class="fa fa-phone icon" aria-hidden="true"></i>
                 </div>
                 <div class="input_box">
-                    <input type="password" placeholder="Create password" name="password" required />
+                    <input type="password" placeholder="Create password" name="password" />
                     <i class="uil uil-lock password"></i>
                     <i class="uil uil-eye-slash pw_hide"></i>
                 </div>
                 <div class="input_box">
-                    <input type="password" placeholder="Confirm password" name="re-password" required />
+                    <input type="password" placeholder="Confirm password" name="re-password" />
                     <i class="uil uil-lock password"></i>
                     <i class="uil uil-eye-slash pw_hide"></i>
                 </div>
                 <div class="input_box">
-                    <input type="name" placeholder="Enter your address" name="address" required />
+                    <input type="name" placeholder="Enter your address" name="address" />
                     <i class="fa fa-map-marker icon" aria-hidden="true"></i>
                 </div>
                 <div class="input_box selection">

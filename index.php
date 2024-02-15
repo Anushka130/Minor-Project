@@ -25,16 +25,16 @@
                 <h6>Save Time</h6>
             </div>
             <div class="fe-box">
-                <img src="./public/images/f1.png" alt="Explore">
-                <h6></h6>
+                <img src="./public/images/appoint.png" alt="Explore">
+                <h6>Appoint Meeting</h6>
             </div>
             <div class="fe-box">
-                <img src="./public/images/f1.png" alt="Explore">
-                <h6></h6>
+                <img src="./public/images/property.jpg" alt="Explore">
+                <h6>View Property</h6>
             </div>
             <div class="fe-box">
-                <img src="./public/images/f1.png" alt="Explore">
-                <h6>Explore</h6>
+                <img src="./public/images/contact.png" alt="Explore">
+                <h6>Contact Us</h6>
             </div>
         </section>
 
