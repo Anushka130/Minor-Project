@@ -1,3 +1,11 @@
+<?php
+include_once "./model/db.php";
+session_start();
+$query = "SELECT * FROM property";
+$result = mysqli_query($conn, $query);
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include_once "./head.php"; ?>

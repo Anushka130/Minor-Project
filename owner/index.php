@@ -1,3 +1,8 @@
+<?php
+include_once "../model/db.php";
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include_once "./head.php"; ?>
@@ -11,7 +16,9 @@
 
 
         <div>
-            <h1>Hi User Name</h1>
+            <h1>Hi
+                <?= $_SESSION["full_name"]; ?>
+            </h1>
             <p>Want to add some property here?</p>
         </div>
         <div class="">
