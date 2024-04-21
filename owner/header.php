@@ -25,7 +25,7 @@
                     <!--  <i class="fas fa-user"></i> -->
                     <span>
                         <i class="fa fa-user fa-lg"></i>
-                        <?= $_SESSION['full_name']; ?>
+                        <?= $_SESSION["full_name"]; ?>
                     </span>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 200px;">

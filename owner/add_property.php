@@ -1,6 +1,7 @@
 <?php
 include_once "../model/db.php";
 session_start();
+$property_name = $property_type = $property_price = $property_location = $property_description = $property_image = "";
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $property_name = mysqli_real_escape_string($conn, $_POST['property_name']);
     $property_type = mysqli_real_escape_string($conn, $_POST['property_type']);
@@ -34,7 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
-
 }
 ?>
 <!DOCTYPE html>
@@ -66,7 +66,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <label for="property_location">Property Location</label>
                 <input type="text" class="form-control" id="property_location" name="property_location" required>
             </div>
-
             <div class="form-group">
                 <label for="property_description">Property Description</label>
                 <textarea class="form-control" id="property_description" name="property_description" rows="3"
@@ -84,6 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 
     </div>
+
 
 
 

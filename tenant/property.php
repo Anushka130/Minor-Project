@@ -3,30 +3,6 @@ include_once "../model/db.php";
 session_start();
 $query = "SELECT * FROM property";
 $result = mysqli_query($conn, $query);
-if (isset($_GET['property_id'])) {
-    $id = $_GET['property_id'];
-    $query = "SELECT * FROM property WHERE id = $id";
-    $result = mysqli_query($conn, $query);
-    if ($result) {
-        // Property found, perform deletion
-        $deleteQuery = "DELETE FROM property WHERE id = $id";
-        if ($conn->query($deleteQuery)) {
-            header("Location: ./property.php?delete=You have successfully deleted the property.");
-            exit; // Important: Stop execution after redirection
-        } else {
-            echo "Error deleting record: " . $conn->error;
-        }
-    } else {
-        echo "Property not found.";
-    }
-
-    $conn->close();
-}
-?>
-<?php
-if (isset($_GET['delete'])) {
-    echo "<div class='col-7'>" . $_GET['delete'] . "</div>";
-}
 
 
 ?>
@@ -67,12 +43,10 @@ if (isset($_GET['delete'])) {
                             <?= $row['property_price'] ?>
                         </h5>
                     </div>
-                    <d class="col-7">
-                        <a href="property.php?property_id=<?= $row['id']; ?>"
-                            class='btn btn-danger w-4 p-2 rounded-1 btn-sm'>Delete</a>
-                        <a href="./view_property.php?property_id=<?= $row['id']; ?>  " target="_blank"
+                    <div class="col-7">
+                        <a href="./view_property.php?property_id=<?= $row['id']; ?>  "
                             class="btn btn-success w-100 p-3 rounded-0 ">View Property</a>
-                    </d>
+                    </div>
                 </div>
             </div>
         <?php } ?>

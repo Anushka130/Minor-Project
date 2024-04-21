@@ -22,9 +22,8 @@ session_start();
             <p>Want to add some property here?</p>
         </div>
         <div class="">
-            <a href="./add_property.php" class="btn btn-primary">Add Property</a>
-            <button class="btn btn-success">View Property</button>
-
+            <a href="./add_property.php" class="btn btn-success">Add Property</a>
+            <a href="./property.php" class="btn btn-success">View Property</a>
 
 
 

@@ -5,8 +5,8 @@ $query = "SELECT * FROM property WHERE id = $id";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_array($result);
 
-?>
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,11 +21,8 @@ $row = mysqli_fetch_array($result);
             </div>
             <div class="col-6 property_content">
                 <h4 class="card-title">
-
                     <i class="fa fa-home"></i>
                     <?= $row['property_name']; ?>
-                    <a href="edit_property.php?property_id=<?= $row['id']; ?>"
-                        class='btn btn-sucess w-4 p-2 rounded-1 btn-sm'>EDIT</a>
                 </h4>
                 <h5 class="card-title">
                     <i class="fa fa-location-arrow"></i>
@@ -46,7 +43,6 @@ $row = mysqli_fetch_array($result);
                     <?= $row['property_price']; ?>
                 </h5>
                 <a href="#" class="btn btn-success property_button ">Book Appointment</a>
-
 
 
             </div>
