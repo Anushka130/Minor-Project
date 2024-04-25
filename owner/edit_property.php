@@ -65,7 +65,7 @@ if (isset($_GET['property_id'])) {
 }
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <?php include_once "./head.php" ?>
 
@@ -116,6 +116,53 @@ if (isset($_GET['property_id'])) {
                 <img src="../public/images/property/<?php echo $property_image; ?>" alt="Property Image"
                     style="max-width: 200px; margin-bottom: 10px;">
             <?php endif; ?>
+            <button type="submit" class="btn btn-primary">Update Property</button>
+        </form>
+    </div>
+    <?php include_once "./footer.php"; ?>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Property</title>
+</head>
+
+<body>
+    <?php include_once "./header.php"; ?>
+    <div class="form_contain">
+        <form action="" method="post" class="form" enctype="multipart/form-data">
+            <h1>Edit Property</h1>
+            <input type="hidden" name="property_id" value="<?php echo $property_id; ?>">
+            <div class="form-group">
+                <label for="property_name">Property Name</label>
+                <input type="text" class="form-control" id="property_name" name="property_name" required
+                    value="<?php echo $property_name; ?>">
+            </div>
+            <!-- Other form fields... -->
+
+            <div class="form-group">
+                <label for="property_image">Property Image</label>
+                <input type="file" class="form-control" id="property_image" name="property_image">
+            </div>
+            <?php if (!empty($property_image)): ?>
+                <img src="../public/images/property/<?php echo $property_image; ?>" alt="Property Image"
+                    style="max-width: 200px; margin-bottom: 10px;">
+            <?php endif; ?>
+
+            <!-- Add your CSS rules here to move the "Edit" button to the left -->
+            <style>
+                /* Example CSS rule to move the button to the left */
+                .btn-primary {
+                    float: right 20%;
+                    /* Add other styling as needed */
+                }
+            </style>
+
             <button type="submit" class="btn btn-primary">Update Property</button>
         </form>
     </div>

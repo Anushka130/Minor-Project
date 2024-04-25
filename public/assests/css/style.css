@@ -418,12 +418,3 @@ body {
   left: 57%;
   top: 87%;
 }
-.property-container {
-  position: absolute; /* Set the container to relative positioning */
-}
-
-.btn-danger {
-  position: absolute; /* Position the Delete button absolutely */
-  top: 5; /* Align it to the bottom */
-  right: 4; /* Align it to the left */
-}

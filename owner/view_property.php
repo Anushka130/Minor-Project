@@ -24,7 +24,7 @@ $row = mysqli_fetch_array($result);
 
                     <i class="fa fa-home"></i>
                     <?= $row['property_name']; ?>
-                    <a href="edit_property.php?property_id=<?= $row['id']; ?>"
+                    <a href="edit_property.php?property_id=<?= $row['id']; ?>" target='blank'
                         class='btn btn-sucess w-4 p-2 rounded-1 btn-sm'>EDIT</a>
                 </h4>
                 <h5 class="card-title">
@@ -46,6 +46,7 @@ $row = mysqli_fetch_array($result);
                     <?= $row['property_price']; ?>
                 </h5>
                 <a href="#" class="btn btn-success property_button ">Book Appointment</a>
+
 
 
 

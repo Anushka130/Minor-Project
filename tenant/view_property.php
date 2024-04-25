@@ -42,7 +42,8 @@ $row = mysqli_fetch_array($result);
                     Rs
                     <?= $row['property_price']; ?>
                 </h5>
-                <a href="#" class="btn btn-success property_button ">Book Appointment</a>
+                <a href="book_appointment.php?property_id=<?= $row['id']; ?>" target="blank"
+                    class="btn btn-success property_button ">Book Appointment</a>
 
 
             </div>
