@@ -418,3 +418,9 @@ body {
   left: 57%;
   top: 87%;
 }
+#group_button a {
+  position: relative;
+  left: 140%;
+  top: 15vh;
+  color: white;
+}

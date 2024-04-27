@@ -29,9 +29,6 @@
                         <?= $row['property_price'] ?>
                     </h5>
                 </div>
-                <div class="col-7">
-                    <a href="#" class="btn btn-success w-100 p-3 rounded-0 ">View Property</a>
-                </div>
             </div>
         </div>
     <?php } ?>

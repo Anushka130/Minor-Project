@@ -20,6 +20,7 @@
             <form action="./controller/login.php" method="post" autocomplete="on">
                 <h2>Login</h2>
 
+
                 <div class="input_box">
                     <input type="email" placeholder="Enter your email" name="email" />
                     <i class="uil uil-envelope-alt email"></i>
@@ -47,10 +48,10 @@
             </form>
         </div>
         <div class="form signup_form">
-            <form action="./controller/register.php" method="post" autocomplete="on">
+            <form action="./controller/register.php" method="post" onsubmit=" return passCheck()" autocomplete=" on">
                 <h2>Register</h2>
                 <div class="input_box">
-                    <input type="name" placeholder="Enter your fullname" name="full_name" />
+                    <input type="name" placeholder="Enter your full name" name="full_name" />
                     <i class="fa fa-user icon" aria-hidden="true"></i>
                 </div>
 
@@ -63,12 +64,14 @@
                     <i class="fa fa-phone icon" aria-hidden="true"></i>
                 </div>
                 <div class="input_box">
-                    <input type="password" placeholder="Create password" name="password" />
+                    <input type="password" placeholder="Create password" id="Password" name="password" />
                     <i class="uil uil-lock password"></i>
                     <i class="uil uil-eye-slash pw_hide"></i>
                 </div>
+                <p id="message" style="color: red;"></p>
+
                 <div class="input_box">
-                    <input type="password" placeholder="Confirm password" name="re-password" />
+                    <input type="password" placeholder="Confirm password" id="Re-Password" name="re-password" />
                     <i class="uil uil-lock password"></i>
                     <i class="uil uil-eye-slash pw_hide"></i>
                 </div>
@@ -87,7 +90,7 @@
                 </div>
 
 
-                <button class="button">Register</button>
+                <button type="submit" class="button">Register</button>
 
                 <div class="login_signup">
                     Already a member?
@@ -96,6 +99,22 @@
             </form>
         </div>
     </div>
+    <script>
+        function passCheck() {
+            let password = document.getElementById("Password").value;
+            let confirmPassword = document.getElementById("Re-Password").value;
+
+            if (password != confirmPassword) {
+                document.getElementById("message").innerHTML = "Password doesn't match!";
+                return false;
+            } else if (password == confirmPassword) {
+                document.getElementById("message").innerHTML = "";
+                return true;
+            }
+
+
+        }
+    </script>
     <script src="./public/assests/js/script.js"></script>
 </body>
 

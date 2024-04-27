@@ -2,26 +2,6 @@
 include_once "../model/db.php";
 session_start();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['bookappointment_id'])) {
-    $bookappointment_id = $_POST['bookappointment_id'];
-    $bookappointment_fulln_name = $_POST['bookappointment_full_name'];
-    $bookappointment_address = $_POST['bookappointment_address'];
-    $bookappointment_email = $_POST['bookappointment_email'];
-    $bookappointment_phone_num = $_POST['bookappointment_phone_num'];
-    $sql = "INSERT INTO bookappointment (bookappointment_full_name, bookappointment_address, bookappointment_email, bookappointment_phone_num) VALUES ('$bookappointment_full_name', '$bookappointment_address', '$bookappointment_email', '$bookappointment_phone_num')";
-
-    $result = mysqli_query($conn, $sql);
-    if ($result) {
-        header("Location: ./property.php : You have submitted your appointment successfully. We will contact you soon.");
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
-    if (isset($_GET['property_id'])) {
-        $property_id = $_GET['property_id'];
-        $query = "SELECT * FROM property WHERE id = $bookappointment_id";
-        $result = mysqli_query($conn, $query);
-    }
-}
 
 ?>
 
@@ -34,34 +14,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['bookappointment_id']))
 
     <?php include_once "./header.php"; ?>
     <div class="form_contain">
-        <form action="" method="post" class="form" enctype="multipart/form-data">
-            <h1>BOOK APPOINTMRNT</h1>
+        <form action="./booking.php" method="post" class="form" enctype="multipart/form-data">
+            <h1>BOOK APPOINTMENT</h1>
             <div class="form-group">
                 <label for="property_name">Full Name</label>
-                <input type="text" class="form-control" id="bookappointment_full_name" name="bookappointment_full_name"
-                    required>
+                <input type="text" class="form-control" id="full_name" name="full_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Email">Email</label>
+                <input type="text" class="form-control" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="address">Address</label>
-                <input type="text" class="form-control" id="bookappointment_address" name="bookappointment_address"
-                    required>
+                <input type="text" class="form-control" id="address" name="address" required>
 
-                </select>
             </div>
             <div class="form-group">
-                <label for="Email">Email</label>
-                <input type="text" class="form-control" id="bookappointment_email" name="bookappointment_email"
-                    required>
+                <label for="phone_num">Phone no.</label>
+                <input type="text" class="form-control" id="phone_no" name="phone_no" required>
             </div>
             <div class="form-group">
-                <label for="phone-num">Phone no.</label>
-                <input type="text" class="form-control" id="bookappointment_phone-num" name="bookappointment_phone-num"
-                    required>
+                <label for="date">Date</label>
+                <input type="date" class="form-control" id="date" name="date" required>
             </div>
 
             <button type="submit" class="btn btn-primary">BOOK APPOINTMENT</button>
         </form>
     </div>
-</body>
-
-</html>
+    <?php include_once ("./footer.php"); ?>

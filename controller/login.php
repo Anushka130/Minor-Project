@@ -24,9 +24,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
 
     } else {
-        echo "Invalid email or password";
+        $_SESSION['message'] = "Invalid email or password";
+        header("Location: ../index.php");
     }
 
 } else {
-    echo "Invalid email or password";
+    $_SESSION['message'] = "Invalid email or password";
+    header("Location: ../index.php");
 }

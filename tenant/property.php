@@ -5,6 +5,7 @@ $query = "SELECT * FROM property";
 $result = mysqli_query($conn, $query);
 
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,9 +14,18 @@ $result = mysqli_query($conn, $query);
 
 <body>
     <?php include_once "./header.php"; ?>
+    <?php
+    if (isset($_SESSION['message'])) {
+        echo "<div class='alert alert-success'>" . $_SESSION['message'] . "</div>";
+        unset($_SESSION['message']);
+    }
+    ?>
 
     <div class="container m-4 product_container">
-        <?php while ($row = mysqli_fetch_array($result)) { ?>
+        <?php
+
+
+        while ($row = mysqli_fetch_array($result)) { ?>
 
             <div class="card border-0 rounded-0 shadow property" style="width: 23rem;height:27rem;">
                 <img src="../public/images/property/<?= $row['property_image']; ?>" class="card-img-top rounded-0"
