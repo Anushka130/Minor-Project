@@ -10,6 +10,7 @@
         <ul id="navbar" class="style_navbar">
             <li><a href="index.php">Home</a></li>
             <li><a href="./property.php">Property</a></li>
+            <li><a href="./requested_appointment.php">Notification</a></li>
             <li><a href="./aboutus.php">About Us</a></li>
 
         </ul>

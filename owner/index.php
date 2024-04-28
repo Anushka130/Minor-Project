@@ -7,6 +7,17 @@ session_start();
 <html lang="en">
 <?php include_once "./head.php"; ?>
 </head>
+<style>
+    body {
+        background-image: url("../public/images/Image2.jpg");
+        background-repeat: no-repeat;
+        background-position-x: 90%;
+        background-position-y: -40%;
+        background-color: aliceblue;
+
+
+    }
+</style>
 
 <body>
     <?php include_once "./header.php"; ?>

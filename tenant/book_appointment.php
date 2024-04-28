@@ -1,6 +1,12 @@
 <?php
 include_once "../model/db.php";
 session_start();
+$query = "SELECT * FROM property WHERE id = {$_GET['property_id']}";
+$result = mysqli_query($conn, $query);
+$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+
+
 
 
 ?>
@@ -14,7 +20,8 @@ session_start();
 
     <?php include_once "./header.php"; ?>
     <div class="form_contain">
-        <form action="./booking.php" method="post" class="form" enctype="multipart/form-data">
+        <form action="./booking.php?owner_id=<?= $row['owner_id']; ?>&property_id=<?= $row['id'] ?>" method="post"
+            class="form" enctype="multipart/form-data">
             <h1>BOOK APPOINTMENT</h1>
             <div class="form-group">
                 <label for="property_name">Full Name</label>

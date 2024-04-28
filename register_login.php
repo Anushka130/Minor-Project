@@ -22,7 +22,16 @@
 
 
                 <div class="input_box">
-                    <input type="email" placeholder="Enter your email" name="email" />
+                    <input type="email" placeholder="Enter your email" value="
+                    <?php
+                    if (isset($_SESSION['email'])) {
+                        echo $_SESSION['email'];
+                    } else {
+                        echo "";
+                    }
+
+
+                    ?>" name="email" />
                     <i class="uil uil-envelope-alt email"></i>
                 </div>
                 <div class="input_box">

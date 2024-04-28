@@ -3,6 +3,7 @@ include_once "../model/db.php";
 session_start();
 $property_name = $property_type = $property_price = $property_location = $property_description = $property_image = "";
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $owner_id = $_SESSION['user_id'];
     $property_name = mysqli_real_escape_string($conn, $_POST['property_name']);
     $property_type = mysqli_real_escape_string($conn, $_POST['property_type']);
     $property_price = mysqli_real_escape_string($conn, $_POST['property_price']);
@@ -28,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $errorMessage = "Invalid image file. Please upload a valid image.";
         }
     }
-    $sql = "INSERT INTO property (property_name, property_type, property_price, property_location, property_description, property_image) VALUES ('$property_name', '$property_type', '$property_price', '$property_location', '$property_description', '$property_image')";
+    $sql = "INSERT INTO property (property_name, property_type, property_price, property_location, property_description, property_image,owner_id) VALUES ('$property_name', '$property_type', '$property_price', '$property_location', '$property_description', '$property_image','$owner_id')";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         header("Location: ./property.php");

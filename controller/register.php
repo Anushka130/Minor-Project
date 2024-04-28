@@ -9,7 +9,6 @@ $password = mysqli_real_escape_string($conn, $_POST['password']);
 $hash = md5($password);
 $address = mysqli_real_escape_string($conn, $_POST['address']);
 $acc_type = mysqli_real_escape_string($conn, $_POST['acc_type']);
-
 $sql = "INSERT INTO user (full_name, email, phone_no, password, address, acc_type) VALUES ('$full_name', '$email', '$phone_no', '$hash', '$address', '$acc_type')";
 $result = mysqli_query($conn, $sql);
 
